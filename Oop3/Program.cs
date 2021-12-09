@@ -18,9 +18,11 @@ namespace Oop3
             ILoggerServices fileLogerservice = new FileLoggerService();
             ILoggerServices smsLogerService = new SmsLoggerService();
 
+            List<ILoggerServices> loggers = new List<ILoggerServices> {new SmsLoggerService(), new DatabaseLoggerService() };
+
             BasvuruManager basvuruManager=new BasvuruManager();
 
-            basvuruManager.BasvuruYap(ihtiyacKrediManager, smsLogerService) ;
+            basvuruManager.BasvuruYap(ihtiyacKrediManager, loggers) ;
 
             
 
